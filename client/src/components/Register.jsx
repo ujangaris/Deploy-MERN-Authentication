@@ -15,7 +15,11 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:3001/register', { name, email, password })
+      .post('https://deploy-mern-authentication-api.vercel.app/register', {
+        name,
+        email,
+        password,
+      })
       .then((response) => {
         Swal.fire({
           title: 'Success',
