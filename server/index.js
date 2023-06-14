@@ -17,7 +17,9 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
 })
-
+app.get('/', (req, res) => {
+  res.json('Hello World')
+})
 // login user
 app.post('/login', (req, res) => {
   const { email, password } = req.body
