@@ -4,7 +4,13 @@ const cors = require('cors')
 const UserModel = require('./models/Auth')
 
 const app = express()
-app.use(cors())
+app.use(
+  cors({
+    origin: ['https://deploy-mern-authentication-frontend.vercel.app'],
+    methods: ['GET', 'POST'],
+    credentials: true,
+  })
+)
 app.use(express.json())
 
 // connect to the database
